@@ -25,7 +25,7 @@ Este tipo de interrupciones son manejadas en su totalidad por el hardware y no e
 Un ejemplo claro de este tipo de interrupciones es la que actualiza el contador del reloj interno de la computadora, el hardware hace el llamado a esta interrupción varias veces durante un segundo para mantener la hora actualizada.
 Las interrupciones externas las generan los dispositivos periféricos, como pueden ser: teclado, impresoras, tarjetas de comunicaciones, etc. También son generadas por los coprocesadores.
 No es posible desactivar a las interrupciones externas.
-Estas interrupciones no son enviadas directamente a la CPU, sino que se mandan a un circuito integrado cuya función es exclusivamente manejar este tipo de interrupciones. El circuito, llamado PIC 8259A\cite{8259}, si es controlado por la CPU utilizando para tal control una serie de vías de comunicación llamadas puertos.
+Estas interrupciones no son enviadas directamente a la CPU, sino que se mandan a un circuito integrado cuya función es exclusivamente manejar este tipo de interrupciones. El circuito, llamado PIC 8259A\cite{8259}, si es controlado por la CPU utilizando para tal control una serie de vías de comunicación llamadas puertos. En la siguiente figura se muestran las interrupciones por hardware.
 
 \begin{figure}[h]
 \centering
@@ -49,7 +49,7 @@ La elección del tipo de interrupción a utilizar dependerá únicamente de las 
 \end{figure}
 
 \subsection{Excepciones}
-Las excepciones son un tipo de interrupción sincrónica típicamente causada por una condición de error en un programa, como por ejemplo una división entre 0 o un acceso inválido a memoria en un proceso de usuario. Normalmente genera un cambio de contexto a modo supervisor para que el sistema operativo atienda el error. Así pues, las excepciones son un mecanismo de protección que permite garantizar la integridad de los datos almacenados tanto en el espacio de usuario como en el espacio kernel. Cuando el Sistema Operativo detecta una excepción intenta solucionarla, pero en caso de no poder simplemente notificará la condición de error a la aplicación/usuario y abortará la misma. 
+Las excepciones son un tipo de interrupción sincrónica típicamente causada por una condición de error en un programa, como por ejemplo una división entre 0 o un acceso inválido a memoria en un proceso de usuario. Normalmente genera un cambio de contexto a modo supervisor para que el sistema operativo atienda el error. Así pues, las excepciones son un mecanismo de protección que permite garantizar la integridad de los datos almacenados tanto en el espacio de usuario como en el espacio kernel. Cuando el Sistema Operativo detecta una excepción intenta solucionarla, pero en caso de no poder simplemente notificará la condición de error a la aplicación/usuario y abortará la misma\cite{exc}. 
 
 \section{Interrupción con Arduino}
 El siguiente código empleamos el pin digital 10 para emular una onda cuadrada de intervalo 2s (1s ON y 1s OFF).
